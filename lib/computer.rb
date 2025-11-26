@@ -69,5 +69,17 @@ class Computer
     best_guess = 0
     best_score = -1
     all_codes = create_all_codes
+
+    all_codes.each do |guess|
+      # The will hold all the feedback/keys and values/codes (from remaining codes not all_codes) that
+      # would still remain if the secrete were the code guessed p.
+      filtered_codes_partition = Hash.new { |hash, key| hash[key] = [] }
+
+      current_set_of_possible_secrets.each do |hypo_secret|
+        hypo_feedback = get_feedback(guess, hypo_secret)
+        filtered_codes_partition[hypo_feedback] = [] if filtered_codes_partition[hypo_feedback].nil?
+        filtered_codes_partition[hypo_feedback] << hypo_secret
+      end
+    end
   end
 end
