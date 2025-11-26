@@ -65,7 +65,6 @@ class Computer
   end
 
   # Method: find_next_guess_minimax(S)
-
   def find_next_guess_minimax(current_set_of_possible_secrets)
     best_guess = 0
     best_score = -1
@@ -99,4 +98,5 @@ class Computer
       end
     end
     best_guess
+  end
 end
