@@ -22,13 +22,13 @@ Prerequisites
 
 Project Structure
 
-  project-root/
-  ├── Gemfile
-  ├── Gemfile.lock
-  ├── README.md
-  ├── main.rb
-  └── lib/
-      └── computer.rb
+project-root/
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── main.rb
+└── lib/
+    └── computer.rb
 
 Installation & Running
   1. Clone the repository
