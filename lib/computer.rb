@@ -47,4 +47,11 @@ class Computer
     # p "[#{black_peg} black peg(s), #{white_peg} white peg(s)]"
     [black_peg, white_peg]
   end
+
+  # Method: check_game_won
+  def check_game_won(feedback)
+    return unless feedback[0] == 4 && feedback[1].zero?
+
+    'Game is won'
+  end
 end
