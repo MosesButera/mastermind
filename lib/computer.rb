@@ -120,6 +120,17 @@ class Computer
       feedback_history << feedback
       puts "\nFeedback: #{feedback[0]} black, #{feedback[1]} white. Feedback History: #{feedback_history}"
 
+      # Step 2: check if game is won:
+      result = check_game_won(feedback)
+      if result == 'Game is won'
+        puts "\nComputer wins game in #{guess_count} rounds. Secret is #{guess}"
+        break
+      end
 
+      if guess_count == 12 && result != 'Game is won'
+        puts "\nComputer lost! After 12 rounds"
+        break
+      end
     end
+  end
 end
