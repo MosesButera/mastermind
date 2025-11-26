@@ -49,3 +49,18 @@ if choice == '1'
     end
   end
 end
+
+# Player chooses to be code maker: Player sets the code and provides feedback.
+if choice == '2'
+  puts "\nPlease enter secret code. For instance: 1122 no spaces."
+  secret = gets.chomp.to_i
+
+  # Error handling guess variable and ensures variable is stored as array. From
+  # entry "1122" to [1, 1, 2, 2]
+  if secret.nil? || !secret.is_a?(Integer)
+    puts "\nPlease enter valid secret. For instance 1234 no spaces."
+  else
+    secret = secret.to_s.chars.map { |char| char.to_i }
+  end
+
+end
