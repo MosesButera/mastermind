@@ -16,5 +16,9 @@ end
 if choice == '1'
   computer = Computer.new('Computer')
   secret = computer.create_secret_code
+  # Initialize round counter to keep track of rounds.
+  round = 0
+  guess_history = []
+  feedback_history = []
 
 end
