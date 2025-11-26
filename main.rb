@@ -11,3 +11,5 @@ if choice.nil? || choice != '1' || choice != '2' || !choice.is_a?(String)
 else
   choice = gets.chomp
 end
+
+# Player guesses secret code:
