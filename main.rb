@@ -13,3 +13,8 @@ else
 end
 
 # Player guesses secret code:
+if choice == '1'
+  computer = Computer.new('Computer')
+  secret = computer.create_secret_code
+
+end
