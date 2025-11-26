@@ -65,6 +65,7 @@ class Computer
   end
 
   # Method: find_next_guess_minimax(S)
+
   def find_next_guess_minimax(current_set_of_possible_secrets)
     best_guess = 0
     best_score = -1
@@ -87,6 +88,15 @@ class Computer
         lengths << value.length
       end
       worst_case_remaining = lengths.max
+
+      # Score in the worst case/How many How many codes we guarantee eliminate in the worst case.
+      score = current_set_of_possible_secrets.length - worst_case_remaining
+
+      # compare score with best score and if best score == score prefer guesses that are in filtered_codes
+      if score > best_score || (score == best_score && current_set_of_possible_secrets.include?(guess))
+        best_score = score
+        best_guess = guess
+      end
     end
-  end
+    best_guess
 end
