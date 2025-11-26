@@ -21,6 +21,7 @@ Prerequisites
   Bundler (optional, if using Gemfile)
 
 Project Structure
+
   project-root/
   ├── Gemfile
   ├── Gemfile.lock
