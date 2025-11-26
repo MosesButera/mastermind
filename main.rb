@@ -35,6 +35,17 @@ if choice == '1'
       feedback_history << feedback
       puts "\nFeedback: #{feedback[0]} black, #{feedback[1]} white. Guess History: #{guess_history}. Feedback History: #{feedback_history}"
       result = computer.check_game_won(feedback)
+
+      # Check if game is won:
+      if result == 'Game is won'
+        p "Congrats #{player_name}!!! You won the game in #{round} round(s). Secret is #{guess}"
+        break
+      end
+
+      if round == 12 && result != 'Game is won'
+        p 'Game is lost!'
+        break
+      end
     end
   end
 end
