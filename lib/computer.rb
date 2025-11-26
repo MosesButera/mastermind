@@ -138,6 +138,9 @@ class Computer
       p "Possibilities remaining: #{current_set_of_possible_secrets.length}"
 
       p "Possibilities remaining: #{current_set_of_possible_secrets}" if current_set_of_possible_secrets.length < 10
+
+      # Step 4:Find next guess using minimax:
+      guess = find_next_guess_minimax(current_set_of_possible_secrets)
     end
   end
 end
