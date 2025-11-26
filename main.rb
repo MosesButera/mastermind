@@ -20,5 +20,9 @@ if choice == '1'
   round = 0
   guess_history = []
   feedback_history = []
-
+  loop do
+    round += 1
+    puts "\nROUND# #{round}\nPlease enter guess. For instance 1122 no spaces."
+    guess = gets.chomp.to_i
+  end
 end
