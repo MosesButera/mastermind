@@ -34,5 +34,17 @@ class Computer
       secret_code_copy[index] = nil # to avoid double counting in white peg mark
       # positions as used by setting to null.
     end
+
+    # White pegs (color matches)
+    guess_copy.compact.each do |target_element|
+      next unless secret_code_copy.include?(target_element)
+
+      white_peg += 1
+      index = secret_code_copy.index(target_element)
+      secret_code_copy[index] = nil # to avoid double counting.
+    end
+
+    # p "[#{black_peg} black peg(s), #{white_peg} white peg(s)]"
+    [black_peg, white_peg]
   end
 end
