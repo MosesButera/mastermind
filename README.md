@@ -28,7 +28,7 @@ project-root/
 ├── README.md
 ├── main.rb
 └── lib/
-    └── computer.rb
+    ├── computer.rb
 
 Installation & Running
   1. Clone the repository
@@ -76,35 +76,34 @@ This approach is effective because each round eliminates inconsistent codes and 
 
     Partitioning for minimax uses a Hash keyed by feedback arrays; values are arrays of secrets that would yield that feedback.
 
-## Pseudocode
+## PSEUDOCODE:
 
-START
+  START
 
-## Setup
-Read player name and mode choice (1 = you guess, 2 = computer guesses)
+  Read player name and mode choice (1 = you guess, 2 = computer guesses)
 
-IF mode == 1:
-  computer picks secret from all codes
-  FOR up to 12 rounds:
-    prompt player for guess (four digits 1..6)
-    compute feedback = computer.get_feedback(guess, secret)
-    print feedback
-    if feedback == [4, 0]:
-      print "You win"
-      break
-  end
+  IF mode == 1:
+    computer picks secret from all codes
+    FOR up to 12 rounds:
+      prompt player for guess (four digits 1..6)
+      compute feedback = computer.get_feedback(guess, secret)
+      print feedback
+      if feedback == [4, 0]:
+        print "You win"
+        break
+    end
 
-ELSE IF mode == 2:
-  player enters secret
-  computer.solve_mastermind(secret)  # loop:
-    make initial guess [1,1,2,2]
-    get feedback
-    if feedback indicates win -> print result
-    else filter possibilities to those consistent with feedback
-    choose next guess via minimax (choose guess that minimizes worst-case remaining)
-  end
+  ELSE IF mode == 2:
+    player enters secret
+    computer.solve_mastermind(secret)  # loop:
+      make initial guess [1,1,2,2]
+      get feedback
+      if feedback indicates win -> print result
+      else filter possibilities to those consistent with feedback
+      choose next guess via minimax (choose guess that minimizes worst-case remaining)
+    end
 
-END
+  END
 
 ## How to test manually
 
