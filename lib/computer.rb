@@ -80,6 +80,13 @@ class Computer
         filtered_codes_partition[hypo_feedback] = [] if filtered_codes_partition[hypo_feedback].nil?
         filtered_codes_partition[hypo_feedback] << hypo_secret
       end
+
+      lengths = []
+      # Feedback with worst case
+      filtered_codes_partition.each_value do |value|
+        lengths << value.length
+      end
+      worst_case_remaining = lengths.max
     end
   end
 end
