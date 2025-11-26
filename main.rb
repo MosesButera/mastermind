@@ -63,4 +63,7 @@ if choice == '2'
     secret = secret.to_s.chars.map { |char| char.to_i }
   end
 
+  computer = Computer.new('Computer')
+  result = computer.solve_mastermind(secret)
+  p result
 end
