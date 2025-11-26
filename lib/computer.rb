@@ -99,4 +99,22 @@ class Computer
     end
     best_guess
   end
+
+  # Method: solve_mastermind(secret)
+  def solve_mastermind(secret)
+    current_set_of_possible_secrets = create_all_codes
+    guess = [1, 1, 2, 2]
+    guess_count = 0
+    guess_history = []
+    feedback_history = []
+    loop do
+      # Start round
+      puts "\nGuess: #{guess}"
+      guess_count += 1
+      puts "\nguess count = #{guess_count}"
+      guess_history << guess
+      puts "\n Guess History: #{guess_history}"
+
+      
+    end
 end
