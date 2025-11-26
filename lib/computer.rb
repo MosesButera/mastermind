@@ -131,6 +131,13 @@ class Computer
         puts "\nComputer lost! After 12 rounds"
         break
       end
+
+      # Step 3: Filter possible secret codes:
+      filtered_set_of_possible_secrets = filter_possibilities(current_set_of_possible_secrets, guess, feedback)
+      current_set_of_possible_secrets = filtered_set_of_possible_secrets
+      p "Possibilities remaining: #{current_set_of_possible_secrets.length}"
+
+      p "Possibilities remaining: #{current_set_of_possible_secrets}" if current_set_of_possible_secrets.length < 10
     end
   end
 end
