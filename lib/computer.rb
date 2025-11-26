@@ -54,4 +54,13 @@ class Computer
 
     'Game is won'
   end
+
+  # Method: filter_possibilities(S, guess, feedback)
+  def filter_possibilities(current_set_of_possible_secrets, guess, feedback)
+    current_set_of_possible_secrets.select do |element|
+      actual_feedback = feedback
+      hypothetical_feedback = get_feedback(guess, element)
+      actual_feedback == hypothetical_feedback
+    end
+  end
 end
