@@ -80,7 +80,7 @@ This approach is effective because each round eliminates inconsistent codes and 
 
 START
 
-# Setup
+## Setup
 Read player name and mode choice (1 = you guess, 2 = computer guesses)
 
 IF mode == 1:
