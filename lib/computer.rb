@@ -115,6 +115,11 @@ class Computer
       guess_history << guess
       puts "\n Guess History: #{guess_history}"
 
-      
+      # Step 1: make first guess to get response/feedback.
+      feedback = get_feedback(guess, secret)
+      feedback_history << feedback
+      puts "\nFeedback: #{feedback[0]} black, #{feedback[1]} white. Feedback History: #{feedback_history}"
+
+
     end
 end
