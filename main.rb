@@ -24,5 +24,17 @@ if choice == '1'
     round += 1
     puts "\nROUND# #{round}\nPlease enter guess. For instance 1122 no spaces."
     guess = gets.chomp.to_i
+
+    # Error handling guess variable
+    if guess.nil? || !guess.is_a?(Integer)
+      puts "\nPlease enter valid guess. For instance 1234 no spaces."
+    else
+      guess = guess.to_s.chars.map { |char| char.to_i }
+      guess_history << guess
+      feedback = computer.get_feedback(guess, secret)
+      feedback_history << feedback
+      puts "\nFeedback: #{feedback[0]} black, #{feedback[1]} white. Guess History: #{guess_history}. Feedback History: #{feedback_history}"
+      result = computer.check_game_won(feedback)
+    end
   end
 end
