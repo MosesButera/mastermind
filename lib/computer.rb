@@ -63,4 +63,11 @@ class Computer
       actual_feedback == hypothetical_feedback
     end
   end
+
+  # Method: find_next_guess_minimax(S)
+  def find_next_guess_minimax(current_set_of_possible_secrets)
+    best_guess = 0
+    best_score = -1
+    all_codes = create_all_codes
+  end
 end
